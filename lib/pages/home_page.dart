@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/util/coffee_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -41,34 +42,36 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: Text("Find the best coffe for you ",
-                style: TextStyle(fontSize: 36)),
-          ),
-          // Find the best coffe for you
+      body: Column(children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          child: Text("Find the best coffe for you ",
+              style: TextStyle(fontSize: 36)),
+        ),
+        // Find the best coffe for you
 
-          // Search Bar
-          SizedBox(height: 25),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: TextField(
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.search),
-                hintText: 'Find your coffe..',
-                focusedBorder: OutlineInputBorder(),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey.shade600),
-                ),
+        // Search Bar
+        SizedBox(height: 25),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          child: TextField(
+            decoration: InputDecoration(
+              prefixIcon: Icon(Icons.search),
+              hintText: 'Find your coffe..',
+              focusedBorder: OutlineInputBorder(),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey.shade600),
               ),
             ),
-          )
+          ),
+        ),
+        SizedBox(height: 25),
 
-          //horizantal listview of coffe tiles
-        ],
-      ),
+        //horizantal listview of coffe tiles
+        Expanded(
+          child: CoffeeTile(),
+        ),
+      ]),
     );
   }
 }
