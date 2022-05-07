@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
         // Find the best coffe for you
 
         // Search Bar
-        SizedBox(height: 25),
+        SizedBox(height: 30),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: TextField(
